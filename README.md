@@ -34,6 +34,17 @@ ________________________________________________________________________________
 ----------------------------------------------------------------------------------------
 
 ```
+## Citation
+Please consider citing our paper:
+
+```
+@article{moitra2022spikesim,
+  title={SpikeSim: An end-to-end Compute-in-Memory Hardware Evaluation Tool for Benchmarking Spiking Neural Networks},
+  author={Moitra, Abhishek and Bhattacharjee, Abhiroop and Kuang, Runcong and Krishnan, Gokul and Cao, Yu and Panda, Priyadarshini},
+  journal={arXiv preprint arXiv:2210.12899},
+  year={2022}
+}
+```
 ## Ackonwledgements
 
 Code for SNN training with quantization has been adapted from https://github.com/jiecaoyu/XNOR-Net-PyTorch 
