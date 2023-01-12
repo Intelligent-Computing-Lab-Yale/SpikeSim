@@ -14,6 +14,8 @@ python hw_inference.py --num_steps 5 --arch 'vgg9' --batch_size 128 --b_size 4 -
 ## Hardware-realistic energy-latency-area evaluation
 ```shell
 python ela_spikesim.py 
+
+## Variable Description 
 ```
 ## Ackonwledgements
 
