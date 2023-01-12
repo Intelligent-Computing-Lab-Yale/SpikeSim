@@ -24,6 +24,7 @@ parser.add_argument('--num_steps',             default=5,    type=int, help='Num
 parser.add_argument('--batch_size',            default=4,       type=int,   help='Batch size')
 parser.add_argument('--ADC_precision',            default=4,       type=int,   help='Crossbar ADC Precision')
 parser.add_argument('--quant',            default=4,       type=int,   help='Weight Quantization')
+parser.add_argument('--xbar_size',            default=64,       type=int,   help='Crossbar Size')
 parser.add_argument('--lr',                    default=0.1,   type=float, help='Learning rate')
 parser.add_argument('--leak_mem',              default=0.99,   type=float, help='Leak_mem')
 parser.add_argument('--arch',              default='vgg9',   type=str, help='Dataset [vgg9, vgg11]')
@@ -300,7 +301,7 @@ acc_top1, acc_top5 = [], []
 model.eval()
 n_bits= args.quant
 b_size = args.b_size
-xbar_size = 64
+xbar_size = args.xbar_size
 base_r = 19.139e3  #120e3 # 200e3 #
 neg_wt_bits1 = 3
 neg_wt_bits2 = 3
