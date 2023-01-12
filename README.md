@@ -5,14 +5,17 @@ The repository consists of two hardware evaluation tools: 1) Non-ideality Comput
 
 ## Quantization-aware (weights only) SNN Training
 ```shell
+cd SNN_train_infer_quantization_ela
 python train.py --lr 0.001 --encode 'd' --arch 'vgg9' --T 5 --quant 4
 ```
 ## Hardware-realistic Inference using the NICE
 ```shell
+cd NICE_Evaluation
 python hw_inference.py --num_steps 5 --arch 'vgg9' --batch_size 128 --b_size 4 --ADC_precision 4 --quant 4
 ```
 ## Hardware-realistic energy-latency-area evaluation
 ```shell
+cd SNN_train_infer_quantization_ela
 python ela_spikesim.py 
 
 ## Variable Description 
