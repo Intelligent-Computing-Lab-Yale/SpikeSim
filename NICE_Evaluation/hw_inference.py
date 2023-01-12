@@ -22,6 +22,8 @@ parser = argparse.ArgumentParser(description='SNN trained with BNTT', formatter_
 parser.add_argument('--seed',                  default=0,        type=int,   help='Random seed')
 parser.add_argument('--num_steps',             default=5,    type=int, help='Number of time-step')
 parser.add_argument('--batch_size',            default=4,       type=int,   help='Batch size')
+parser.add_argument('--ADC_precision',            default=4,       type=int,   help='Crossbar ADC Precision')
+parser.add_argument('--quant',            default=4,       type=int,   help='Weight Quantization')
 parser.add_argument('--lr',                    default=0.1,   type=float, help='Learning rate')
 parser.add_argument('--leak_mem',              default=0.99,   type=float, help='Leak_mem')
 parser.add_argument('--arch',              default='vgg9',   type=str, help='Dataset [vgg9, vgg11]')
@@ -199,7 +201,7 @@ class BinOp():
             x = x.div(y)
             x = x.add(v2)
             x = x.mul(v1)
-            n_bits = 4
+            n_bits = args.quant
             W_sbits = torch.round(x * 2 ** (n_bits - 1))
             W_sbits = W_sbits / 2 ** (n_bits - 1)
             # if index == 0:
@@ -296,7 +298,7 @@ test_acc_list = []
 
 acc_top1, acc_top5 = [], []
 model.eval()
-n_bits=4
+n_bits= args.quant
 b_size = args.b_size
 xbar_size = 64
 base_r = 19.139e3  #120e3 # 200e3 #
@@ -450,10 +452,10 @@ print('Weights loaded')
 print('Starting Evaluation')
 global weight_conn
 
-bits = 4
+bits = args.quant
 
 bin_op = BinOp(model)
-ADC_precision = 4
+ADC_precision = args.ADC_precision
 weight_conn=np.array([2**bits-1, 2**bits-1, 2**bits-1, 2**bits-1, 2**bits-1, 2**bits-1, 2**bits-1, 2**bits-1, 2**bits-1, 2**bits-1,
                          2**bits-1, 2**bits-1, 2**bits-1, 2**bits-1, 2**bits-1, 2**bits-1, 2**bits-1, 2**bits-1, 2**bits-1, 2**bits-1,
                          2**bits-1, 2**bits-1, 2**bits-1, 2**bits-1, 2**bits-1])
