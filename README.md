@@ -17,7 +17,8 @@ python hw_inference.py --num_steps 5 --arch 'vgg9' --batch_size 128 --b_size 4 -
 ```shell
 cd SNN_train_infer_quantization_ela
 python ela_spikesim.py 
-
+```
+```
 ## Variable Description 
 ________________________________________________________________________________________
 | Variable     | Type | Length            | Description                                |
@@ -32,7 +33,6 @@ ________________________________________________________________________________
 | time_steps   | int  | -                 | No. of Time Steps                          |
 | clk_freq     | int  | -                 | Clock Frequency in MHz                     | 
 ----------------------------------------------------------------------------------------
-
 ```
 ## Citation
 Please consider citing our paper:
