@@ -1,9 +1,19 @@
 # SpikeSim: An end-to-end Compute-in-Memory Hardware Evaluation Tool for Benchmarking Spiking Neural Networks
 ### This repository contains the Pytorch-based evaluation codes for [SpikeSim: An end-to-end Compute-in-Memory Hardware Evaluation Tool for Benchmarking Spiking Neural Networks]. https://arxiv.org/pdf/2210.12899.pdf
  
-Currently this repository contains the energy, latency, area (ELA) evaluation code for 4-bit quantized VGG9 SNN model pre-trained on CIFAR10 and implemented on 64x64 4-bit SRAM and 1-bit RRAM crossbars. It also contains the code for quantization-aware SNN training. For reference, we have also provided a pre-trained model path for a 4-bit quantized VGG9 SNN on CIFAR10 dataset. 
+The repository consists of two hardware evaluation tools: 1) Non-ideality Computation Engine (NICE) and 2) Energy-Latency-Area (ELA) Tool. It also contains the code for quantization-aware SNN training. For reference, we have also provided a pre-trained model path for a 4-bit quantized VGG9 SNN on CIFAR10 dataset. 
 
-TO DO: This Repository is under work and we will be adding the remainder codes for hardware-realistic accuracy evaluation (NICE Engine) and ELA evaluation for other crossbar sizes and technology nodes.
+## Quantization-aware (weights only) SNN Training
+
+python train.py --lr 0.001 --encode 'd' --arch 'vgg9' --T 5 --quant 4
+
+## Hardware-realistic Inference using the NICE
+
+python hw_inference.py --num_steps 5 --arch 'vgg9' --batch_size 128 --b_size 4 --ADC_precision 4 --quant 4
+
+## Hardware-realistic energy-latency-area evaluation
+
+python ela_spikesim.py 
 
 ## Ackonwledgements
 
