@@ -18,7 +18,7 @@ python ela_spikesim.py
 ## Variable Description 
 
 | Variable | Type | Length | Description|
-| :---:    | :---:| :---:  | :---:      |
+| :---:    | :---:| :---:  | :---:      
 
 in_ch_list -> type: list; length: No. of SNN layers; Description: Layer-wise input channel count
 out_ch_list -> type: list; length: No. of SNN layers; Description: Layer-wise output channel count
