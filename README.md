@@ -16,13 +16,19 @@ python hw_inference.py --num_steps 5 --arch 'vgg9' --batch_size 128 --b_size 4 -
 python ela_spikesim.py 
 
 ## Variable Description 
-
-| Variable | Type | Length | Description|
-| :---:    | :---:| :---:  | :---:      
-
-in_ch_list -> type: list; length: No. of SNN layers; Description: Layer-wise input channel count
-out_ch_list -> type: list; length: No. of SNN layers; Description: Layer-wise output channel count
-
+________________________________________________________________________________________
+| Variable     | Type | Length            | Description                                |
+|--------------|------|-------------------|--------------------------------------------|
+| in_ch_list   | list | No. of SNN Layers | Layer-wise input channel count             |
+| out_ch_list  | list | No. of SNN Layers | Layer-wise output channel count            |
+| in_dim_list  | list | No. of SNN Layers | Layer-wise input feature size              |
+| out_dim_list | list | No. of SNN Layers | Layer-wise output feature size             |
+| xbar_size    | int  | -                 | Crossbar Size                              |
+| kernel_size  | int  | -                 | SNN Kernel Size                            | 
+| pe_per_tile  | int  | -                 | No. of Processing Engines (PE) in one tile |
+| time_steps   | int  | -                 | No. of Time Steps                          |
+| clk_freq     | int  | -                 | Clock Frequency in MHz                     | 
+----------------------------------------------------------------------------------------
 
 ```
 ## Ackonwledgements
