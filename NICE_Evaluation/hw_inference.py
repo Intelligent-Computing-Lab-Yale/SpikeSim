@@ -274,7 +274,7 @@ if args.arch == 'vgg9':
     # model_file = torch.load('modelsave_diff_channels_VGG9_4bit/cifar10vgg9_timestep5_lr0.1_epoch120_leak0.99_bnttTrue_bestmodel_4bit_64channels.pth.tar', map_location='cpu')['state_dict']
 
     # Direct Coded Model
-    model_file = torch.load('vgg9_direct_cifar10_t5_epoch100.pth.tar')
+    model_file = torch.load('../SNN_train_infer_quantization_ela/vgg9_direct_cifar10_t5_epoch100.pth.tar')
     model.module.load_state_dict(model_file['state_dict'])
 
     # model.module.load_state_dict(model_file)
